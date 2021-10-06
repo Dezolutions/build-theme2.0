@@ -1,11 +1,56 @@
+{{'products-list.css' | asset_url |  stylesheet_tag}}
+{{'product-card.css' | asset_url |  stylesheet_tag}}
 <div>
-  {% for collection in collections %}
-    <div>{{ collection.title}}</div>
-    {% for product in collection.products %}
-      <div>
-        
-        {{ product.title}}
-      </div>
-    {% endfor %}
-  {% endfor %}
+    <h1>{{collection.title}}</h1>
+    {% if collection.products %}
+        <div class="products-list">
+            
+            {% for product in collection.products %}
+                
+                {% render 'product-card',
+                product_card_product: product,
+                sale_badge: section.settings.enable_sale_badge,
+                shipping_badge: section.settings.enable_shipping_badge,
+                new_badge: section.settings.enable_new_badge,
+                closeout_badge: section.settings.product_closeout %}
+
+            {% endfor %}
+        </div>
+    {% endif %}
+  
 </div>
+
+{% schema %}
+{
+  "name": "Products list",
+  "settings": [
+    {
+      "type": "header",
+      "content":"Badges options"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sale_badge",
+      "default": true,
+      "label": "Sale"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_shipping_badge",
+      "default": false,
+      "label": "Free shipping"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_new_badge",
+      "default": false,
+      "label": "New"
+    },
+    {
+      "type": "product",
+      "id": "product_closeout",
+      "label": "Select product for closeout"
+    }
+  ]
+}
+{% endschema %}

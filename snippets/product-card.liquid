@@ -1,0 +1,52 @@
+
+
+<div class="product-card" data-created="{{productCreated | date: "%Y-%m-%d"}}"  >
+  
+<a class="product-card__url" href="{{product_card_product.url }}">
+  <div class="product-card__inner">
+    <img
+      srcset="{%- if product_card_product.featured_media.width >= 165 -%}{{ product_card_product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+      {%- if product_card_product.featured_media.width >= 360 -%}{{ product_card_product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+      {%- if product_card_product.featured_media.width >= 533 -%}{{ product_card_product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+      {%- if product_card_product.featured_media.width >= 720 -%}{{ product_card_product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+      {%- if product_card_product.featured_media.width >= 940 -%}{{ product_card_product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+      {%- if product_card_product.featured_media.width >= 1066 -%}{{ product_card_product.featured_media | img_url: '1066x' }} 1066w{%- endif -%}"
+      src="{{ product_card_product.featured_media | img_url: '533x' }}"
+      alt="{{ product_card_product.featured_media.alt | escape }}"
+      loading="lazy"
+      class="product-card__img"      
+    >
+  </div>
+
+  <!--Calculating date for NEW BADGE-->
+  {% assign days = 10 %}
+  {% assign period_time = days | times: 24 | times: 60 | times: 60 %}
+  {% assign date_now = 'now' | date:'%s' %}
+  {% assign date_finished = product_card_product.created_at | date:'%s' | plus: period_time | date:'%s' %}
+  <!--Calculating date for NEW BADGE-->
+  
+  <div class="card__content"><h2 class="card__text h3">{{ product_card_product.title }}</h2></div>          
+  <div>{{product_card_product.price |  money_with_currency}}</div>
+  <div class="card__badge">
+
+    {% if closeout_badge.title == product_card_product.title %}
+      <span>Closeout</span>
+
+    {% elsif new_badge and date_finished > date_now %}
+      <span>New</span>
+
+    {% elsif shipping_badge and product_card_product.tags contains "free shipping" %}
+      <span>Free shipping</span>
+
+    {% elsif sale_badge and product_card_product.compare_at_price > product_card_product.price %}
+      <span>{{ 'products.product.on_sale' | t }}</span>
+
+    {% endif %}
+  </div>
+</a>
+
+
+
+
+</div>
+
