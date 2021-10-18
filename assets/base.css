@@ -2,3 +2,10 @@ body{
   background-color: #000;
   color: white;
 }
+
+a,h1,h2,h3,p {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-decoration: none;
+}
