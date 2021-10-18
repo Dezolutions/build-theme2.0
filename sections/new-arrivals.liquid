@@ -1,0 +1,43 @@
+<div class="new__arrivals">
+  <h1>New arrivals</h1>
+  
+    <div class="products-list new__arrivals-list">
+      {% assign days = 10 %}
+      {% assign period_time = days | times: 24 | times: 60 | times: 60 %}
+      {% assign date_now = 'now' | date:'%s' %}
+      
+      {% for product in collections.all.products %}
+    
+          {% assign date_finished = product.created_at | date:'%s' | plus: period_time | date:'%s' %}
+          {%if date_finished > date_now  %}
+            {% render 'product-card-arrivals',
+              product_card_product: product,
+              product_date_finished: date_finished 
+            %}
+          {%endif%} 
+      
+      {% endfor %}
+    </div>
+</div>
+
+<script src="{{ 'new-arrivals.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "New arrivals",
+  "settings": [
+    {
+      "type":"text",
+      "id":"new_arrivals_title",
+      "label":"New arrivals title",
+      "default":"New arrivals"
+   }
+  ],
+  "presets": [
+    {
+      "category": "category",
+      "name":"New Arrivals"
+    }
+  ]
+}
+{% endschema %}
