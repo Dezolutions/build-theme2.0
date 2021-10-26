@@ -6,19 +6,19 @@
       <ul class="header__menu">
         {% for link in linklists.main-menu.links %}
           <li class="header__menu-item {% if link.active %}active{% endif %}">
-            <a href="{{ link.url }}">{{ link.title }}</a>
+            <a class="header__item-link" href="{{ link.url }}"><span>{{ link.title }}</span> {% if link.links != blank %}<span class="icon-caret__main" >{% render 'icon-caret' %}</span>{%endif%}</a>
             
             {% if link.links != blank %}
               <ul class="header__submenu">
                 
                 {% for child_link in link.links %}  
-                  <li class="header__submenu-item {% if child_link.active %}child-active{% endif %}">
-                    <a href= "{{ child_link.url }}">{{ child_link.title }}</a>
+                  <li class="header__submenu-item {% if child_link.active %}child-active{% endif %}"  >
+                    <a class="header__item-link" href= "{{ child_link.url }}"><span>{{ child_link.title }}</span> {% if child_link.links != blank %}<span class="icon-caret__span">{% render 'icon-caret' %}</span>{%endif%}</a>
                     {% if child_link.links != blank %}
                       <ul class="header__submenu-second">
                       {% for grandchild_link in child_link.links %}  
                         <li class="header__submenu-second__item {% if grandchild_link.active %}child-active{% endif %}">
-                          <a href= "{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                          <a class="header__item-link" href= "{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
                         </li>
                       {% endfor %}
                       </ul>
