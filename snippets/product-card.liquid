@@ -27,19 +27,19 @@
 
   <div class="card__content"><h2 class="card__text h3">{{ product_card_product.title }}</h2></div>          
   <div>{{product_card_product.price |  money_with_currency}}</div>
-  <div class="card__badge">
+  <div class="card__badges">
 
-    {% if closeout_badge.title == product_card_product.title %}
-      <span>Closeout</span>
+    {% if product_card_product.compare_at_price > product_card_product.price %}
+        <span class="sale-badge badge">{{ 'products.product.on_sale' | t }}</span>
+        
+    {% elsif product_card_product.metafields.my_fields.free_shipping  %}
+      <span class="free-badge badge">{{ 'products.product.free_shipping' | t }}</span>
 
-    {% elsif new_badge and date_finished > date_now %}
-      <span>New</span>
+    {% elsif date_finished > date_now %}
+      <span class="new-badge badge">{{ 'products.product.new' | t }}</span>
 
-    {% elsif shipping_badge and product_card_product.tags contains "free shipping" %}
-      <span>Free shipping</span>
-
-    {% elsif sale_badge and product_card_product.compare_at_price > product_card_product.price %}
-      <span>{{ 'products.product.on_sale' | t }}</span>
+    {% elsif product_card_product.metafields.my_fields.closeout %}
+      <span class="closeout-badge badge">{{ 'products.product.closeout' | t }}</span>
 
     {% endif %}
   </div>

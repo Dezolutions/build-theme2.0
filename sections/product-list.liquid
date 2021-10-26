@@ -20,38 +20,3 @@
   {% endif %}
 
 </div>
-
-{% schema %}
-{
-"name": "Product list",
-"settings": [
-  {
-    "type": "header",
-    "content":"Badges options"
-  },
-  {
-    "type": "checkbox",
-    "id": "enable_sale_badge",
-    "default": true,
-    "label": "Sale"
-  },
-  {
-    "type": "checkbox",
-    "id": "enable_shipping_badge",
-    "default": false,
-    "label": "Free shipping"
-  },
-  {
-    "type": "checkbox",
-    "id": "enable_new_badge",
-    "default": false,
-    "label": "New"
-  },
-  {
-    "type": "product",
-    "id": "product_closeout",
-    "label": "Select product for closeout"
-  }
-]
-}
-{% endschema %}
