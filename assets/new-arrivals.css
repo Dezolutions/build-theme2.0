@@ -1,0 +1,5 @@
+.no-products__block{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(114, 114, 114);
+}
