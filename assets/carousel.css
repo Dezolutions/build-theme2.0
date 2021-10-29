@@ -48,6 +48,8 @@
 }
 .swiper-slide__text{
   position: absolute;
+  background-color: #fff;
+  padding: 7px 10px;
   font-size: 30px;
   left: 2%;
   bottom: 2%;
