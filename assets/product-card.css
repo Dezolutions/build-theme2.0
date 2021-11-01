@@ -48,9 +48,11 @@
   width: 70px;
   height: 70px;
 }
-.new-badge {
-  width: 80px;
-  height: 80px;
+.free-badge {
+  width: 150px;
+  height: 120px;
+  text-align: center;
+  font-size: 20px;
   left: -20px;
   top: -20px;
   background-color: rgb(255, 252, 64);
