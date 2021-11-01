@@ -1,0 +1,109 @@
+.product-card{
+  position: relative;
+  width: 400px;
+  height: 500px;
+  margin: 25px 15px;
+  padding: 10px;
+  border: 1px solid rgb(22, 4, 34);
+  background-color: rgb(16, 2, 26);
+  border-radius: 15px;
+  transition: .2s ease;
+}
+.product-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 10px 2px rgb(199, 199, 199);
+}
+.product-card__img{
+  max-height: 90%;
+  max-width: 90%;
+  
+}
+.product-card__url{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-card__inner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 370px;
+  overflow: hidden;
+}
+.card__badges{
+  font-weight: 700;
+}
+.badge{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  position: absolute;
+  font-size: 27px;
+  z-index: 10;
+  top: -15px;
+  left: -15px;
+  transform: rotate(-15deg);
+  width: 70px;
+  height: 70px;
+}
+.new-badge {
+  width: 80px;
+  height: 80px;
+  left: -20px;
+  top: -20px;
+  background-color: rgb(255, 252, 64);
+  clip-path: ellipse(48% 34% at 50% 50%);
+}
+.new-badge{
+  left: 0;
+  top: 0;
+  transform: rotate(0);
+  background-color: rgb(46, 194, 46);
+  clip-path: polygon(75% 0%, 91% 50%, 75% 100%, 0% 100%, 14% 51%, 0% 0%);
+}
+.sale-badge {
+  left: -6px;
+  top: -6px;
+  color: white;
+  font-size: 40px;
+  background-color: rgb(255, 44, 44);
+}
+.sale-badge:before {
+  height: 70px;
+  width: 70px;
+  background-color: rgb(255, 44, 44);
+  content:"";
+  position: absolute;
+  z-index: -1;
+  /* Rotate */
+  -moz-transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+.sale-badge:after {
+  height: 70px;
+  width: 70px;
+  background-color: rgb(255, 44, 44);
+  content:"";
+  position: absolute;
+  z-index: -1;
+  /* Rotate */
+  -moz-transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+.closeout-badge{
+  color: white;
+  font-size: 16px;
+  background-color: rgb(55, 16, 160);
+  left: -1px;
+  top: -1px;
+  transform: rotate(0);
+  border-radius: 15px;
+}

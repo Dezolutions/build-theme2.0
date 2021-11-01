@@ -99,6 +99,7 @@
     "collection_title": "Your collection's name"
   },
   "products": {
+    "no_products": "There is no new products for the time being",
     "product": {
       "add_to_cart": "Add to cart",
       "description": "Description",
