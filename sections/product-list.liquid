@@ -1,0 +1,22 @@
+{{'products-list.css' | asset_url |  stylesheet_tag}}
+{{'product-card.css' | asset_url |  stylesheet_tag}}
+
+<div>
+  <h1>{{collection.title}}</h1>
+  {% if collection.products %}
+      <div class="products-list">
+          
+          {% for product in collection.products %}
+              
+              {% render 'product-card',
+              product_card_product: product,
+              sale_badge: section.settings.enable_sale_badge,
+              shipping_badge: section.settings.enable_shipping_badge,
+              new_badge: section.settings.enable_new_badge,
+              closeout_badge: section.settings.product_closeout %}
+
+          {% endfor %}
+      </div>
+  {% endif %}
+
+</div>
