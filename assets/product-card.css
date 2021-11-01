@@ -18,12 +18,7 @@
   max-width: 90%;
   
 }
-.product-card__url{
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 .product-card__inner{
   display: flex;
   justify-content: center;
