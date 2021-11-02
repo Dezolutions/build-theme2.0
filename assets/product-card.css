@@ -23,6 +23,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-decoration: none;
+}
+.price__block{
+  display: flex;
+}
+.price__item{
+  margin-right: 10px;
+}
+.compare-active {
+  text-decoration: line-through;
 }
 .product-card__inner{
   display: flex;
