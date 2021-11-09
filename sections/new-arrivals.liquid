@@ -15,9 +15,11 @@
         
         {%if date_finished > date_now  %}
         {% assign product_count  = product_count  | plus: 1 %}
-          {% render 'product-card-arrivals',
-            product_card_product: product
-          %}
+          {% if product.available %}
+            {% render 'product-card-arrivals',
+              product_card_product: product
+            %}
+          {% endif %}
         {%endif%} 
         
       {% endfor %}
