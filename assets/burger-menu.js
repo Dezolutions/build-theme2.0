@@ -1,7 +1,9 @@
 const btn = document.querySelector('.menu-checkbox__label')
+const checkbox = document.querySelector('#menu_checkbox')
 const menu = document.querySelector('.header__menu-mobile')
 const submenuOpenItems = document.querySelectorAll('.submenu-open')
 const secondSubmenuOpenItems = document.querySelectorAll('.second-submenu-open')
+const links = document.querySelectorAll('a.header__item-link')
 
 submenuOpenItems.forEach(item => {
   item.onclick = () => {
@@ -18,3 +20,6 @@ secondSubmenuOpenItems.forEach(item => {
 btn.onclick = () => {
   menu.classList.toggle('header__menu-mobile__active')
 }
+
+links.forEach(link => link.addEventListener('click', () => checkbox.checked = false))
+
