@@ -76,8 +76,8 @@
   clip-path: polygon(75% 0%, 91% 50%, 75% 100%, 0% 100%, 14% 51%, 0% 0%);
 }
 .sale-badge {
-  left: -6px;
-  top: -6px;
+  left: -3px;
+  top: -3px;
   color: white;
   font-size: 40px;
   background-color: rgb(255, 44, 44);
