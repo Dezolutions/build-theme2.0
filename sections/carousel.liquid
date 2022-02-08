@@ -12,7 +12,7 @@
         <div class="swiper-slide">
           <a class="swiper-slide__link" href="{{block.settings.slide_link}}">
             <div class="link-banner">
-              <p class="link-banner__item">Click on slide to go to {{block.settings.carousel_text}}</p>
+              <p class="link-banner__item">{{ 'general.slider.click_slide' | t }} {{block.settings.carousel_text}}</p>
             </div>
             <p class="swiper-slide__text">{{block.settings.carousel_text}}</p>
             <img class="swiper-slide__img" src="{{block.settings.carousel_image | img_url: '1050x' }}"  alt="slide img">

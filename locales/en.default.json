@@ -1,5 +1,8 @@
 {
   "general": {
+    "slider": {
+      "click_slide": "Click on slide to go to"
+    },
     "password_page": {
       "login_form_heading": "Enter store using password:",
       "login_password_button": "Enter using password",
